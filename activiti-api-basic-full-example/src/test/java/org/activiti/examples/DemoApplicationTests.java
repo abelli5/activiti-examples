@@ -1,9 +1,9 @@
 package org.activiti.examples;
 
-import org.activiti.runtime.api.ProcessRuntime;
-import org.activiti.runtime.api.model.ProcessDefinition;
-import org.activiti.runtime.api.query.Page;
-import org.activiti.runtime.api.query.Pageable;
+import org.activiti.api.process.model.ProcessDefinition;
+import org.activiti.api.process.runtime.ProcessRuntime;
+import org.activiti.api.runtime.shared.query.Page;
+import org.activiti.api.runtime.shared.query.Pageable;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -26,7 +26,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-	    securityUtil.logInAs("salaboy");
+	    securityUtil.logInAs("system");
 	    
         Page<ProcessDefinition> pdList = prt.processDefinitions(Pageable.of(0, 10));
         
